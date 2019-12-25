@@ -34,7 +34,7 @@
 <body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif;">
     <div id="app" >
         @include("layouts.nav")
-        <main class="container my-5" >
+        <main class="my-5" >
             @yield('content')
         </main>
     </div>

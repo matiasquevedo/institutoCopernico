@@ -27,9 +27,9 @@
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>          
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                    @if(Auth::user()->type == "admin")
-                       <a class="dropdown-item" href="">Mi Perfil</a>
+                       <a class="dropdown-item" href="{{route('user.perfil')}}">{{\Auth::user()->name}} {{\Auth::user()->lastname}}</a>
                    @else                                    
-                      <a class="dropdown-item" href="">Mi Perfil</a>
+                      
                    @endif
                  <a class="dropdown-item" href="{{ route('logout') }}"
                              onclick="event.preventDefault();

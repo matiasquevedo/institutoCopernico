@@ -37,10 +37,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function commerce() {
-      return $this->hasOne('App\Commerce');
-    }
-
     public function admin(){
         return $this->type === 'admin';
     }

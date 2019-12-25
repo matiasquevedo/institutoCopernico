@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important;">
     <div class="navbar-header">
         <a class="navbar-brand" href="/">
-          <img src="/images/logo.png" width="35"></a>
+          <img src="/logo.jpg" class="rounded-circle" width="35"></a>
     </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav mr-auto">           

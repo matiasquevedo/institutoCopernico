@@ -153,7 +153,7 @@ return [
     |
     */
 
-    'domain' => '.cartamovil.test',
+    'domain' => env('SESSION_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------

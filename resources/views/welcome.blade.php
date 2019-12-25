@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
-@section('title','Home')
+@section('title','Inicio')
 
 @section('content')
-<div>
-    <h3>Tuvi</h3>
-    
+<div class="bg-white px-3 py-3 border rounded mx-3">
+	<div class="container">
+		<h3>Bienvenido!</h3>
+		<h4>{{config('app.name')}}</h4>
+	</div>    
 </div>
 @endsection

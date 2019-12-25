@@ -27,17 +27,9 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
         if(\Auth::user()->type == 'admin'){
-            $plans = Plan::all()->take(5);
-            return view('admin.index')->with('plans',$plans);
+            return view('admin.index');
         }elseif (\Auth::user()->type == 'commerce') {
-            $user = User::find(\Auth::user()->id);
-            // dd($user);
-            $commerces = $user->comerce;
-            if(\Auth::user()->commerce == null){
-                return redirect()->route('commerce.create');
-            }else{
-                return redirect()->route('commerce.subdomain',\Auth::user()->commerce->slug);
-            }
+
         }        
     }
 
