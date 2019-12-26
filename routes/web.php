@@ -21,6 +21,30 @@ Route::get('perfil',[
 	'as'=>'user.perfil'
 ]);
 
+Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
+
+	Route::resource('user','UserController');
+	Route::get('user/{email}/delete',[
+		'uses'=>'UserController@destroy',
+		'as'=>'user.destroy'
+	]);
+
+	Route::resource('page','PageController');
+	Route::get('page/{slug}/delete',[
+		'uses'=>'PageController@destroy',
+		'as'=>'pages.destroy'
+	]);
+	Route::get('page/{slug}/post',[
+		'uses'=>'PageController@post',
+		'as'=>'page.post'
+	]);
+	Route::get('page/{slug}/unpost',[
+		'uses'=>'PageController@unpost',
+		'as'=>'page.unpost'
+	]);
+
+});
+
 Auth::routes();
 
 Route::get('/panel', 'HomeController@index')->name('home');

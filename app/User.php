@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function admin(){
         return $this->type === 'admin';
     }
+
+    public function pages(){
+      return $this->hasMany('App\Page');
+    }
 }

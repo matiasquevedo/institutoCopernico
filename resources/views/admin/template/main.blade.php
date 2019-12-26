@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/leaflet-geocoder/dist/Control.Geocoder.css')}}">
     <link rel="stylesheet" href="{{ asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.css')}}">
     <link rel="stylesheet" href=" {{asset('plugins/rangeslider.js-2.3.0/rangeslider.css')}} ">
+    <link rel="stylesheet" href=" {{asset('plugins/trumbowyg-master/dist/ui/trumbowyg.min.css')}} ">
  
 </head>
 <body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif !important;">
@@ -50,6 +51,9 @@
     <script src="{{asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.js')}}"></script>
     <script src='https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js'></script>
     <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.js')}}"></script>
+    <script src="{{asset('plugins/trumbowyg-master/dist/trumbowyg.min.js')}}"></script>
+
+    
     @yield('js')
 </body>
 </html>

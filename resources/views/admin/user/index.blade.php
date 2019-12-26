@@ -12,7 +12,6 @@
 		      <th>Nombre</th>
 		      <th>Apellido</th>
 		      <th>Tipo</th>
-		      <th>Comercio</th>
 		      <th>Acción</th>
 		    </tr>
 		  </thead>
@@ -21,14 +20,9 @@
 		    <tr>
 		        <td>{{$user->name}}</td>
 		        <td>{{$user->lastname}}</td>
-		        <td>{{$user->type}}</td>
 		        <td>
 		        	@if($user->type == 'admin')
 		        		<span class="badge badge-success">Administrador</span>
-		        	@elseif($user->commerce != null)
-						{{$user->commerce->name}}
-		        	@else
-						Sin Comercio
 		        	@endif
 		        </td>
 		      <td>

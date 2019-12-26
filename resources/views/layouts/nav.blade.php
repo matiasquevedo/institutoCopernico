@@ -11,6 +11,9 @@
               
                 
             <ul class="navbar-nav mr-auto">
+              @foreach($pages as $page)
+                <li class="nav-item"><a class="nav-link" href="">{{ ucwords($page->title) }}</a></li>
+              @endforeach
               <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
               
               @guest
