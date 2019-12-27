@@ -4,6 +4,9 @@
 
 @section('content')
 <div class="bg-white px-3 py-3 border rounded">
+	<div class="float-right">
+		<p><i>Creado por:{{$page->user->name}} {{$page->user->lastname}}</i></p>
+	</div>
 	<div class="d-flex d-inline align-middle">
 		<h3>{{$page->title}}</h3>
 		<div class="mt-1 ml-3">
@@ -25,10 +28,12 @@
 		</div>      	
     	
 	</div>
-
-	<div class="container">
+	<hr>
+	<div class="container mt-3">
 		{!! $page->descripcion !!}
 	</div>
+
+	
 	
 </div>
 @endsection

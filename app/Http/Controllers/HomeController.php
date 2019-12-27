@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Plan;
-use App\Commerce;
+use App\Page;
 class HomeController extends Controller
 {
     /**
@@ -31,6 +30,11 @@ class HomeController extends Controller
         }elseif (\Auth::user()->type == 'commerce') {
 
         }        
+    }
+
+    public function publicPage($slugPage){
+        $page = Page::findBySlug($slugPage);
+        return view('public.page.show')->with('page',$page);
     }
 
 }

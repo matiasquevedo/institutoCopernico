@@ -1,4 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
     <div class="navbar-header">
         <a class="navbar-brand" href="/">
           <img src="/logo.jpg" class="rounded-circle" width="35"></a>
@@ -12,7 +15,7 @@
                 
             <ul class="navbar-nav mr-auto">
               @foreach($pages as $page)
-                <li class="nav-item"><a class="nav-link" href="">{{ ucwords($page->title) }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('public.page',$page->slug)}}">{{ ucwords($page->title) }}</a></li>
               @endforeach
               <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
               
@@ -60,3 +63,12 @@
     </div>
 
 </nav>
+
+<div class="pos-f-t border-top">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-white p-4">
+      <h5 class="h4">Collapsed content</h5>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+</div>

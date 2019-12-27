@@ -48,3 +48,4 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 Auth::routes();
 
 Route::get('/panel', 'HomeController@index')->name('home');
+Route::get('/{slugPage}', 'HomeController@publicPage')->name('public.page');
