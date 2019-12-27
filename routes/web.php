@@ -43,6 +43,25 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 		'as'=>'page.unpost'
 	]);
 
+	Route::resource('event','EventController');
+	Route::get('event/{slug}/delete',[
+		'uses'=>'EventController@destroy',
+		'as'=>'events.destroy'
+	]);
+	Route::get('event/{slug}/post',[
+		'uses'=>'EventController@post',
+		'as'=>'event.post'
+	]);
+	Route::get('event/{slug}/unpost',[
+		'uses'=>'EventController@unpost',
+		'as'=>'event.unpost'
+	]);
+
+	Route::get('events/calendario',[
+		'uses'=>'EventController@indexCalendar',
+		'as'=>'events.calendar'
+	]);
+
 });
 
 Auth::routes();

@@ -5,7 +5,7 @@
   	<a href="/panel" class="list-group-item list-group-item-action ">Dashboard</a>
     <a href=" {{route('user.index')}} " class="list-group-item list-group-item-action ">Usuarios<span class="float-right badge badge-primary">{{ count(\App\User::all())}}</span></a>
     <a href="{{route('page.index')}}" class="list-group-item list-group-item-action ">Secciones<span class="float-right badge badge-primary">{{ count(\App\Page::all())}}</span></a>
-    <a href="" class="list-group-item list-group-item-action ">Eventos</a>
+    <a href="{{route('event.index')}}" class="list-group-item list-group-item-action ">Eventos<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
     <a href="" class="list-group-item list-group-item-action ">Categorias</a>
     <a href="" class="list-group-item list-group-item-action ">Productos</a>
     <a href="" class="list-group-item list-group-item-action ">Pedidos</a>

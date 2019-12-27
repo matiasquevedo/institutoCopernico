@@ -5,3 +5,4 @@ show tables;
 select * from migrations;
 select * from users;
 select * from pages;
+select * from events;

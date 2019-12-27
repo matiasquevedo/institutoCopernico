@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="{{ asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.css')}}">
     <link rel="stylesheet" href=" {{asset('plugins/rangeslider.js-2.3.0/rangeslider.css')}} ">
     <link rel="stylesheet" href=" {{asset('plugins/trumbowyg-master/dist/ui/trumbowyg.min.css')}} ">
+    <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/core/main.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/daygrid/main.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/list/main.css')}}">
  
 </head>
 <body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif !important;">
@@ -52,6 +55,9 @@
     <script src='https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js'></script>
     <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.js')}}"></script>
     <script src="{{asset('plugins/trumbowyg-master/dist/trumbowyg.min.js')}}"></script>
+    <script src="{{asset('plugins/fullcalendar-4.3.1/packages/core/main.js')}}"></script>
+    <script src="{{asset('plugins/fullcalendar-4.3.1/packages/daygrid/main.js')}}"></script>
+    <script src="{{asset('plugins/fullcalendar-4.3.1/packages/list/main.js')}}"></script>
 
     
     @yield('js')

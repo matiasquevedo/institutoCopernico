@@ -15,7 +15,19 @@ class EventController extends Controller
     public function index()
     {
         //
+        $events = Event::orderBy('id','ASC')->paginate(20);
+        return view('admin.event.index')->with('events',$events);
     }
+
+    public function indexCalendar()
+    {
+        //
+        $events = Event::orderBy('id','ASC')->paginate(20);
+        return view('admin.event.calendar')->with('events',$events);
+    }
+
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -25,6 +37,7 @@ class EventController extends Controller
     public function create()
     {
         //
+        return view('admin.event.create');
     }
 
     /**
@@ -36,6 +49,12 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        $event = new Event($request->all());
+        $event->user_id = \Auth::user()->id;
+        $event->save();
+        flash('Se ha creado el evento '.$event->title)->success();
+        return redirect()->route('event.index');
     }
 
     /**
@@ -70,6 +89,27 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //
+    }
+
+    public function post($eventSlug)
+    {
+        //
+        $event = Event::findBySlug($eventSlug);
+        $event->state = '1';
+        $event->save();
+        flash('El evento '.$event->title.' esta visible')->success();
+        return redirect()->back();
+    }
+
+    public function unpost($eventSlug)
+    {
+        //
+        $event = Event::findBySlug($eventSlug);
+        $event->state = '0';
+        $event->save();
+        flash('El evento '.$event->title.' esta oculto')->error();
+        return redirect()->back();
+
     }
 
     /**
