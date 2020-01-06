@@ -12,9 +12,10 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[
+	'uses'=>'HomeController@paginaPrincipal',
+	'as'=>'pagina.principal'
+]);
 
 Route::get('perfil',[
 	'uses'=>'UserController@show',
@@ -79,6 +80,11 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 	Route::post('album/pic/add',[
 		'uses'=>'AlbumController@addPics',
 		'as'=>'album.addPics'
+	]);
+
+	Route::get('album/pics/index',[
+		'uses'=>'AlbumController@indexPic',
+		'as'=>'album.indexPic'
 	]);
 
 

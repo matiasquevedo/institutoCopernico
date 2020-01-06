@@ -5,7 +5,7 @@
 @section('content')
 <div class="bg-white px-3 py-3 border rounded">
 	<div class="float-right">
-		<p><i>Creado por:{{$page->user->name}} {{$page->user->lastname}}</i></p>
+		<p><i>Creado por: {{$page->user->name}} {{$page->user->lastname}}</i></p>
 	</div>
 	<div class="d-flex d-inline align-middle">
 		<h3>{{$page->title}}</h3>

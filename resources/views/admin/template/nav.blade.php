@@ -13,8 +13,7 @@
          
            
        <ul class="navbar-nav mr-auto">
-         <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
-         
+         <li class="nav-item"><a class="nav-link" href="/">Página Principal</a></li>         
          @guest
              <li class="nav-item"><a class="nav-link" href="{{route('register')}}">
                Registro

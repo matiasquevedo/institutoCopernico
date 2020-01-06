@@ -23,6 +23,15 @@ class AlbumController extends Controller
         return view('admin.album.index')->with('albums',$albums);
     }
 
+    public function indexPic()
+    {
+        //
+        $albums = Album::orderBy('id','ASC')->paginate(20);
+        return view('admin.album.indexPic')->with('albums',$albums);
+    }
+
+    
+
     /**
      * Show the form for creating a new resource.
      *

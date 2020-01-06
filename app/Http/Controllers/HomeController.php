@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Page;
+use App\Album;
 class HomeController extends Controller
 {
     /**
@@ -35,6 +36,12 @@ class HomeController extends Controller
     public function publicPage($slugPage){
         $page = Page::findBySlug($slugPage);
         return view('public.page.show')->with('page',$page);
+    }
+
+    public function paginaPrincipal(){
+        $pages = Page::where('state','1')->where('home','1')->get();
+        $album = Album::where('state','1')->get();
+        return view('welcome')->with('pages',$pages)->with('album',$album);
     }
 
 }

@@ -10,7 +10,6 @@
 		  <thead>
 		    <tr>
 		      <th>Nombre</th>
-		      <th>Apellido</th>
 		      <th>Tipo</th>
 		      <th>Acción</th>
 		    </tr>
@@ -18,8 +17,7 @@
 		  <tbody>
 		    @foreach($users as $user)
 		    <tr>
-		        <td>{{$user->name}}</td>
-		        <td>{{$user->lastname}}</td>
+		        <td>{{$user->name}} {{$user->lastname}}</td>
 		        <td>
 		        	@if($user->type == 'admin')
 		        		<span class="badge badge-success">Administrador</span>

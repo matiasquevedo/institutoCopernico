@@ -4,13 +4,19 @@
 
 @section('content')
 <div class="bg-white px-3 py-3 border rounded">
-	<h3>Albumes <a class="" href="{{route('album.create')}}" ><i style="font-size: 25px !important;" class="fas fa-plus-circle"></i></a></h3>
+	<h3>Albumes 
+		<a class="" href="{{route('album.create')}}" ><i style="font-size: 25px !important;" class="fas fa-plus-circle"></i></a>
+		<a href="{{route('album.indexPic')}}" class="btn btn-outline-primary float-right"><i class="fas fa-th"></i></a>
+	</h3>
+
+	
 	@if(count($albums)>0)
 			<div>
 				  <table class="table table-striped">
 				  <thead>
 				    <tr>
 				      <th>Titulo</th>
+				      <th>Portada</th>
 				      <th>Estado</th>
 				      <th>Acción</th>
 				    </tr>
@@ -18,7 +24,9 @@
 				  <tbody>
 				    @foreach($albums as $album)
 				    <tr>
+				    	
 				        <td><a href="{{route('album.show',$album->slug)}}">{{ ucwords($album->titulo) }}</a></td>
+				        <td><img src="{{url($album->thumb)}}" width="40" alt=""></td>
 				        <td>
 				        	<h5>
 				        		@if($album->state == '1')
