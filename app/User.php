@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function events(){
       return $this->hasMany('App\Event');
     }
+
+    public function albums(){
+      return $this->hasMany('App\Album');
+    }
 }

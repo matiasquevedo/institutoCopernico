@@ -32,14 +32,16 @@
     
 </head>
 <body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif;">
-    <div id="app" >
+    <div>
         @include("layouts.nav")
-        <main class="my-5" >
-            @yield('content')
+        <main class="container-fluid my-5" >            
+            <div id='app'>
+                @yield('content')
+            </div>
         </main>
     </div>
 
-    <script src=" {{asset('plugins/jquery/jquery-3.4.1.js')}} " ></script>
+    {{-- <script src=" {{asset('plugins/jquery/jquery-3.4.1.js')}} " ></script> --}}
     <script src=" {{asset('plugins/popper/popper.min.js')}} " ></script>
     <script src="{{asset('plugins/bootstrap-4.4.1/dist/js/bootstrap.js')}}"></script>
     <script src=" {{asset('plugins/fontawesome-5.11.2/js/all.js')}} "></script>

@@ -118,8 +118,12 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($eventSlug)
     {
         //
+        $event = Event::findBySlug($eventSlug);
+        flash('Se ha elimnado el evento '.$event->title)->error();
+        $event->delete();
+        return redirect()->back();
     }
 }

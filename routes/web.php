@@ -62,6 +62,26 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 		'as'=>'events.calendar'
 	]);
 
+	Route::resource('album','AlbumController');
+	Route::get('album/{slug}/delete',[
+		'uses'=>'AlbumController@destroy',
+		'as'=>'album.destroy'
+	]);
+	Route::get('album/{slug}/post',[
+		'uses'=>'AlbumController@post',
+		'as'=>'album.post'
+	]);
+	Route::get('album/{slug}/unpost',[
+		'uses'=>'AlbumController@unpost',
+		'as'=>'album.unpost'
+	]);
+
+	Route::post('album/pic/add',[
+		'uses'=>'AlbumController@addPics',
+		'as'=>'album.addPics'
+	]);
+
+
 });
 
 Auth::routes();

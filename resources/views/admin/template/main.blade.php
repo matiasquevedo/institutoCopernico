@@ -10,7 +10,7 @@
     <title> @yield('title') | Administrador</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/core/main.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/daygrid/main.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/list/main.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/lightbox/dist/ekko-lightbox.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
  
 </head>
 <body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif !important;">
@@ -37,10 +40,29 @@
         <div id="page-content-wrapper">
             @include('admin.template.nav')
             <div class="mt-3">
+                @if(count($errors)>0)
+
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+
+                                <li>
+                                    {{ $error}}
+                                </li>
+
+                            @endforeach
+                        </ul>
+                        
+
+                    </div>
+                    
+                @endif
                 @include('flash::message')
             </div>
             <main class="container-fluid py-1 px-2 mb-5" >
-                @yield('content')
+                <div id='app'>
+                    @yield('content')
+                </div>
             </main>            
         </div>
     </div>
@@ -58,8 +80,7 @@
     <script src="{{asset('plugins/fullcalendar-4.3.1/packages/core/main.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar-4.3.1/packages/daygrid/main.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar-4.3.1/packages/list/main.js')}}"></script>
-
-    
+    <script src="{{asset('plugins/lightbox/dist/ekko-lightbox.js')}}"></script>
     @yield('js')
 </body>
 </html>
