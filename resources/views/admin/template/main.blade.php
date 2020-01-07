@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/daygrid/main.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/list/main.css')}}">
     <link rel="stylesheet" href="{{ asset('plugins/lightbox/dist/ekko-lightbox.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/css/grapes.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
  
@@ -81,6 +82,7 @@
     <script src="{{asset('plugins/fullcalendar-4.3.1/packages/daygrid/main.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar-4.3.1/packages/list/main.js')}}"></script>
     <script src="{{asset('plugins/lightbox/dist/ekko-lightbox.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/grapes.min.js"></script>
     @yield('js')
 </body>
 </html>

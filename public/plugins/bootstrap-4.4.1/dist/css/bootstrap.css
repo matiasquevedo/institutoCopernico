@@ -10352,6 +10352,15 @@ a.text-dark:hover, a.text-dark:focus {
   border-bottom: 0.25rem solid #5a5c69 !important;
 }
 
+nav.admin  ul li.nav-item a.nav-link{
+  background-color:transparent !important;
+  color: rgba(255,255,255,.6) !important;
+}
+
+nav.admin  ul li.nav-item a.nav-link:hover{
+  color: rgba(255,255,255,1) !important;
+}
+
 /*.dropdown .dropdown-menu {
   font-size: 0.85rem;
 }

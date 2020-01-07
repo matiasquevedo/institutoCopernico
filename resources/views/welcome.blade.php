@@ -3,7 +3,7 @@
 @section('title','Inicio')
 
 @section('content')
-<div class="bg-white px-3 py-3 border rounded mx-3">
+{{-- <div class="bg-white px-3 py-3 border rounded mx-3">
 	<div class="container-fluid">
 		<h3>Bienvenido!</h3>
 		<h4>{{config('app.name')}}</h4>
@@ -22,6 +22,12 @@
 			@endforeach
 		</div>
 	</div>
-@endif
-
+@endif --}}
+<div class="container">
+	<div class="text-center">
+		<img src="/images/019-crane-2.png" width="200" alt=""><br><br>
+		<h1>Sitio en Construcción</h1>
+		<h4>Estamos trabajando para ofrecer un mejor servicio</h4>
+	</div>
+</div>
 @endsection

@@ -14,6 +14,9 @@
               
                 
             <ul class="navbar-nav mr-auto">
+              @if(count(\App\Album::where('state','1')->get())>0)
+                <li class="nav-item"><a class="nav-link" href="">Galeria</a></li>
+              @endif
               @foreach($pages as $page)
                 <li class="nav-item"><a class="nav-link" href="{{route('public.page',$page->slug)}}">{{ ucwords($page->title) }}</a></li>
               @endforeach

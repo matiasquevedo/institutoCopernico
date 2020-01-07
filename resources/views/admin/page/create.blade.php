@@ -38,7 +38,6 @@
 				{!! Form::submit('Crear',['class'=>'btn btn-primary']) !!}
 			</div>	
 
-	
 
 	{!! Form::close() !!}
 </div>
@@ -46,6 +45,8 @@
 
 @section('js')
 	<script>
+
+
 
 
 		$('#trumbowyg-demo').trumbowyg();
