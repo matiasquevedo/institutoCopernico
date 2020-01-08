@@ -7,6 +7,7 @@
     <a href="{{route('page.index')}}" class="list-group-item list-group-item-action ">Secciones<span class="float-right badge badge-primary">{{ count(\App\Page::all())}}</span></a>
     <a href="{{route('event.index')}}" class="list-group-item list-group-item-action ">Eventos<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
     <a href="{{route('album.index')}}" class="list-group-item list-group-item-action ">Albumes<span class="float-right badge badge-primary">{{ count(\App\Album::all())}}</span></a>
+    <a href="{{route('mes.index')}}" class="list-group-item list-group-item-action ">Cielo del Mes</a>
   </div>
 </div>
 

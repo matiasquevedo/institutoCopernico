@@ -25,13 +25,15 @@
     <link rel="stylesheet" href="{{ asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.css')}}">
     <link rel="stylesheet" href=" {{asset('plugins/rangeslider.js-2.3.0/rangeslider.css')}} ">
     <link rel="stylesheet" href=" {{asset('plugins/trumbowyg-master/dist/ui/trumbowyg.min.css')}} ">
+    <link rel="stylesheet" href=" {{asset('plugins/trumbowyg-master/dist/plugins/table/ui/trumbowyg.table.min.css')}} ">
     <link rel="stylesheet" href="{{ asset('plugins/fullcalendar/fullcalendar.css')}}">
     <link rel="stylesheet" href="{{ asset('plugins/lightbox/dist/ekko-lightbox.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/chosen-v1.8.7/chosen.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
  
 </head>
-<body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif !important;">
+<body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif !important;" class="text-dark">
     
     <div id="app wrapper" class="d-flex" >
         @include('admin.template.sidebar')
@@ -73,11 +75,13 @@
     <script src="{{asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.js')}}"></script>
     <script src='https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js'></script>
     <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.js')}}"></script>
-    <script src="{{asset('plugins/trumbowyg-master/dist/trumbowyg.min.js')}}"></script>
+    <script src="{{asset('plugins/trumbowyg-master/dist/trumbowyg.js')}}"></script>
+    <script src="{{asset('plugins/trumbowyg-master/dist/plugins/table/trumbowyg.table.min.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar/lib/moment.min.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar/fullcalendar.min.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar/locale/es.js')}}"></script>
     <script src="{{asset('plugins/lightbox/dist/ekko-lightbox.js')}}"></script>
+    <script src="{{asset('plugins/chosen-v1.8.7/chosen.jquery.min.js')}}"></script>
     @yield('js')
 </body>
 </html>

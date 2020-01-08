@@ -87,6 +87,27 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 		'as'=>'album.indexPic'
 	]);
 
+	Route::resource('cielo/mes','MonthController');
+	Route::get('mes/{slug}/delete',[
+		'uses'=>'MonthController@destroy',
+		'as'=>'mes.destroy'
+	]);
+	Route::get('mes/{slug}/post',[
+		'uses'=>'MonthController@post',
+		'as'=>'mes.post'
+	]);
+	Route::get('mes/{slug}/unpost',[
+		'uses'=>'MonthController@unpost',
+		'as'=>'mes.unpost'
+	]);
+
+	Route::get('mes/{slug}/prevista',[
+		'uses'=>'MonthController@showPreview',
+		'as'=>'mes.preview'
+	]);
+
+	
+
 
 });
 

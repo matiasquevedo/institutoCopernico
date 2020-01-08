@@ -15,6 +15,8 @@ class MonthController extends Controller
     public function index()
     {
         //
+        $months = Month::orderBy('id','ASC')->paginate(12);
+        return view('admin.cielo.index')->with('months',$months);
     }
 
     /**
@@ -25,6 +27,7 @@ class MonthController extends Controller
     public function create()
     {
         //
+        return view('admin.cielo.create');
     }
 
     /**
@@ -36,6 +39,10 @@ class MonthController extends Controller
     public function store(Request $request)
     {
         //
+        $month = new Month($request->all());
+        $month->save();
+        flash('Se ha creado el mes '.$month->titulo)->success();
+        return redirect()->route('mes.index');
     }
 
     /**
@@ -44,9 +51,39 @@ class MonthController extends Controller
      * @param  \App\Month  $month
      * @return \Illuminate\Http\Response
      */
-    public function show(Month $month)
+    public function show($monthSlug)
     {
         //
+        $month = Month::findBySlug($monthSlug);
+        return view('admin.cielo.show')->with('month',$month);
+    }
+
+    public function showPreview($monthSlug)
+    {
+        //
+        $month = Month::findBySlug($monthSlug);
+        return view('admin.cielo.preview')->with('month',$month);
+    }
+
+    public function post($monthSlug)
+    {
+        //
+        $month = Month::findBySlug($monthSlug);
+        $month->state = '1';
+        $month->save();
+        flash('El mes '.$month->titulo.' esta visible')->success();
+        return redirect()->back();
+    }
+
+    public function unpost($monthSlug)
+    {
+        //
+        $month = Month::findBySlug($monthSlug);
+        $month->state = '0';
+        $month->save();
+        flash('El mes '.$month->titulo.' esta oculto')->success();
+        return redirect()->back();
+
     }
 
     /**
@@ -55,9 +92,10 @@ class MonthController extends Controller
      * @param  \App\Month  $month
      * @return \Illuminate\Http\Response
      */
-    public function edit(Month $month)
+    public function edit($monthSlug)
     {
         //
+
     }
 
     /**
@@ -67,9 +105,14 @@ class MonthController extends Controller
      * @param  \App\Month  $month
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Month $month)
+    public function update(Request $request, $monthSlug)
     {
-        //
+        $month = Month::findBySlug($monthSlug);
+        // dd($month, $request, $monthSlug);
+        $month->fill($request->all());
+        $month->save();
+        flash('Se a guardado el mes ' . $month->titulo)->success();
+        return redirect()->back();
     }
 
     /**

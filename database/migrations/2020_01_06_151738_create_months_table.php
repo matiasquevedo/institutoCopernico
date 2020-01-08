@@ -15,6 +15,10 @@ class CreateMonthsTable extends Migration
     {
         Schema::create('months', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('titulo')->unique();
+            $table->enum('state',['0','1'])->default('0');
+            $table->string('slug')->nullable();          
+            $table->longText('descripcion');
             $table->timestamps();
         });
     }

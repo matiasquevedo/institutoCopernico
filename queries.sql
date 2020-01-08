@@ -8,3 +8,4 @@ select * from pages;
 select * from events;
 select * from albums;
 select * from images;
+select * from months;
