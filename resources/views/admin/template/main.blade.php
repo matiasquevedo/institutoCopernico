@@ -25,11 +25,8 @@
     <link rel="stylesheet" href="{{ asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.css')}}">
     <link rel="stylesheet" href=" {{asset('plugins/rangeslider.js-2.3.0/rangeslider.css')}} ">
     <link rel="stylesheet" href=" {{asset('plugins/trumbowyg-master/dist/ui/trumbowyg.min.css')}} ">
-    <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/core/main.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/daygrid/main.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/fullcalendar-4.3.1/packages/list/main.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/fullcalendar/fullcalendar.css')}}">
     <link rel="stylesheet" href="{{ asset('plugins/lightbox/dist/ekko-lightbox.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/css/grapes.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
  
@@ -73,16 +70,14 @@
     <script src="{{asset('plugins/bootstrap-4.4.1/dist/js/bootstrap.js')}}"></script>
     <script src=" {{asset('plugins/fontawesome-5.11.2/js/all.js')}} "></script>
     <script src="{{asset('plugins/leaflet/leaflet.js')}}"></script>
-    <script src="{{asset('plugins/leaflet-geocoder/dist/Control.Geocoder.js')}}"></script>
     <script src="{{asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.js')}}"></script>
     <script src='https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js'></script>
     <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.js')}}"></script>
     <script src="{{asset('plugins/trumbowyg-master/dist/trumbowyg.min.js')}}"></script>
-    <script src="{{asset('plugins/fullcalendar-4.3.1/packages/core/main.js')}}"></script>
-    <script src="{{asset('plugins/fullcalendar-4.3.1/packages/daygrid/main.js')}}"></script>
-    <script src="{{asset('plugins/fullcalendar-4.3.1/packages/list/main.js')}}"></script>
+    <script src="{{asset('plugins/fullcalendar/lib/moment.min.js')}}"></script>
+    <script src="{{asset('plugins/fullcalendar/fullcalendar.min.js')}}"></script>
+    <script src="{{asset('plugins/fullcalendar/locale/es.js')}}"></script>
     <script src="{{asset('plugins/lightbox/dist/ekko-lightbox.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/grapes.min.js"></script>
     @yield('js')
 </body>
 </html>

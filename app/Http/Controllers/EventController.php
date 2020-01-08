@@ -63,9 +63,11 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($eventSlug)
     {
         //
+        $event = Event::findBySlug($eventSlug);
+        return view('admin.event.show')->with('event',$event);
     }
 
     /**
