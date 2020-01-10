@@ -20,7 +20,7 @@
               @foreach($pages as $page)
                 <li class="nav-item"><a class="nav-link" href="{{route('public.page',$page->slug)}}">{{ ucwords($page->title) }}</a></li>
               @endforeach
-              <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
+              {{-- <li class="nav-item"><a class="nav-link" href="">Contacto</a></li> --}}
               
               @guest
                   <li class="nav-item"><a class="nav-link" href="{{route('register')}}">

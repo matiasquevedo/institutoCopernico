@@ -17,12 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet"> 
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{asset('plugins/bootstrap-4.4.1/dist/css/bootstrap.css')}}">
     <link rel="stylesheet" href=" {{asset('plugins/fontawesome-5.11.2/css/all.css')}} ">
     <link rel="stylesheet" href="{{ asset('plugins/leaflet/leaflet.css')}}">
-    <link rel="stylesheet" href="{{ asset('plugins/leaflet-geocoder/dist/Control.Geocoder.css')}}">
-    <link rel="stylesheet" href="{{ asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.css')}}">
     <link rel="stylesheet" href=" {{asset('plugins/rangeslider.js-2.3.0/rangeslider.css')}} ">
     <link rel="stylesheet" href=" {{asset('plugins/trumbowyg-master/dist/ui/trumbowyg.min.css')}} ">
     <link rel="stylesheet" href=" {{asset('plugins/trumbowyg-master/dist/plugins/table/ui/trumbowyg.table.min.css')}} ">
@@ -71,16 +69,12 @@
     <script src=" {{asset('plugins/popper/popper.min.js')}} " ></script>
     <script src="{{asset('plugins/bootstrap-4.4.1/dist/js/bootstrap.js')}}"></script>
     <script src=" {{asset('plugins/fontawesome-5.11.2/js/all.js')}} "></script>
-    <script src="{{asset('plugins/leaflet/leaflet.js')}}"></script>
-    <script src="{{asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.js')}}"></script>
-    <script src='https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js'></script>
-    <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.js')}}"></script>
-    <script src="{{asset('plugins/trumbowyg-master/dist/trumbowyg.js')}}"></script>
+    <script src="{{asset('plugins/trumbowyg-master/dist/trumbowyg.min.js')}}"></script>
     <script src="{{asset('plugins/trumbowyg-master/dist/plugins/table/trumbowyg.table.min.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar/lib/moment.min.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar/fullcalendar.min.js')}}"></script>
     <script src="{{asset('plugins/fullcalendar/locale/es.js')}}"></script>
-    <script src="{{asset('plugins/lightbox/dist/ekko-lightbox.js')}}"></script>
+    <script src="{{asset('plugins/lightbox/dist/ekko-lightbox.min.js')}}"></script>
     <script src="{{asset('plugins/chosen-v1.8.7/chosen.jquery.min.js')}}"></script>
     @yield('js')
 </body>
