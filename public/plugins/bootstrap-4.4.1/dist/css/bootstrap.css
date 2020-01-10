@@ -10223,6 +10223,11 @@ a.text-dark:hover, a.text-dark:focus {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+/*.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
 
 
 
@@ -10265,28 +10270,133 @@ a.text-dark:hover, a.text-dark:focus {
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+}*/
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
 }
 
-.sidebar-admin{
-  color: white !important;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d65d3+26,4096ee+71 */
-  background-color: #1f1f1f; /* Old browsers */
-  background: -moz-linear-gradient(top,  #1f1f1f 26%,  #1f1f1f 71%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #1f1f1f 26%, #1f1f1f 71%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #1f1f1f 26%, #1f1f1f 71%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d65d3', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
-
-  border-color: #1f1f1f;
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #1f1f1f;
+    color: rgba(255,255,255,1) !important;
+    transition: all 0.3s;
 }
 
-.sidebar-admin .list-group-item{
-  background-color:transparent !important;
-  color: rgba(255,255,255,.6) !important;
+#sidebar.active {
+    margin-left: -250px;
 }
 
-.sidebar-admin .list-group-item:hover{
-  color: rgba(255,255,255,1) !important;
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #1f1f1f;
 }
+
+#sidebar ul.components {
+    padding: 20px 0;
+    /*border-bottom: 1px solid #47748b;*/
+}
+
+#sidebar ul p {
+    color: rgba(255,255,255,1) !important;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+  color: rgba(255,255,255,.2) !important;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: rgba(255,255,255,1) !important;
+    text-decoration: none;
+    /*background: #fff;*/
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: rgba(255,255,255,1) !important;
+    background: #1f1f1f;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #282828;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    /*padding: 20px;*/
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
 
 .border-left-primary {
   border-left: 0.25rem solid #4e73df !important;
@@ -10374,3 +10484,24 @@ nav.admin  ul li.nav-item a.nav-link:hover{
 .dropdown.no-arrow .dropdown-toggle::after {
   display: none;
 }*/
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 160px;
+    transform: translateY(-50%);
+}
+
+.break-word {
+  display: block;
+ -ms-word-break: break-all;
+     word-break: break-all;
+
+     // Non standard for webkit
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}

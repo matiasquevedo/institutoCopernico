@@ -68,7 +68,7 @@
 		</div>
 		@else
 		<div class="text-center">
-			<p><i>No hay Secciones</i></p>
+			<p><i>No hay Eventos</i></p>
 		</div>
 		@endif
 
