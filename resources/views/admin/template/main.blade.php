@@ -32,11 +32,20 @@
  
 </head>
 <body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif !important;" class="text-dark">
-    
-    <div id="app wrapper" class="d-flex" >
-        @include('admin.template.sidebar')
-        <div id="page-content-wrapper">
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        @include('admin.template.sidebar')      
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            {{-- nav content --}}
+
             @include('admin.template.nav')
+
+            {{-- /nav content --}}
+
+            {{-- content --}}
             <div class="mt-3">
                 @if(count($errors)>0)
 
@@ -61,7 +70,11 @@
                 <div id='app'>
                     @yield('content')
                 </div>
-            </main>            
+            </main>
+
+            {{-- /content --}}
+
+            
         </div>
     </div>
 
@@ -76,6 +89,13 @@
     <script src="{{asset('plugins/fullcalendar/locale/es.js')}}"></script>
     <script src="{{asset('plugins/lightbox/dist/ekko-lightbox.min.js')}}"></script>
     <script src="{{asset('plugins/chosen-v1.8.7/chosen.jquery.min.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
     @yield('js')
 </body>
 </html>

@@ -1,14 +1,64 @@
-<!-- Sidebar -->
-<div class="bg-light border-right sidebar-admin" id="sidebar-wrapper">
-  <div class="sidebar-heading" style="height: 70px;"><span class="align-middle"> {{config('app.name')}} </span></div>
-  <div class="list-group list-group-flush px-2">
-  	<a href="/panel" class="list-group-item list-group-item-action ">Dashboard</a>
-    <a href=" {{route('user.index')}} " class="list-group-item list-group-item-action ">Usuarios<span class="float-right badge badge-primary">{{ count(\App\User::all())}}</span></a>
-    <a href="{{route('page.index')}}" class="list-group-item list-group-item-action ">Secciones<span class="float-right badge badge-primary">{{ count(\App\Page::all())}}</span></a>
-    <a href="{{route('event.index')}}" class="list-group-item list-group-item-action ">Eventos<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
-    <a href="{{route('album.index')}}" class="list-group-item list-group-item-action ">Albumes<span class="float-right badge badge-primary">{{ count(\App\Album::all())}}</span></a>
-    <a href="{{route('mes.index')}}" class="list-group-item list-group-item-action ">Cielo del Mes</a>
-  </div>
-</div>
+<nav id="sidebar">
+    <div class="sidebar-header text-center">
+        <a class="navbar-brand" href="/">
+          <img src="/logo.jpg" class="rounded-circle" width="90"></a>
+    </div>
 
-<!-- End Sidebar -->
+    <ul class="list-unstyled components">
+    	<li>
+    	    <a href="/panel">Panel</a>
+    	</li>
+        {{-- <li class="active">
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#">Home 1</a>
+                </li>
+                <li>
+                    <a href="#">Home 2</a>
+                </li>
+                <li>
+                    <a href="#">Home 3</a>
+                </li>
+            </ul>
+        </li> --}}
+        {{-- <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Page 1</a>
+                </li>
+                <li>
+                    <a href="#">Page 2</a>
+                </li>
+                <li>
+                    <a href="#">Page 3</a>
+                </li>
+            </ul>
+        </li>  --}}
+        <li>
+            <a href=" {{route('user.index')}} " class="">Usuarios<span class="float-right badge badge-primary">{{ count(\App\User::all())}}</span></a>
+        </li>
+        <li>
+            <a href="{{route('page.index')}}" class="">Secciones<span class="float-right badge badge-primary">{{ count(\App\Page::all())}}</span></a>
+        </li>
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="{{route('events.calendar')}}" class="">Calendario<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
+                </li>
+                <li>
+                    <a href="{{route('event.index')}}" class="">Lista<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{route('album.index')}}" class="">Albumes<span class="float-right badge badge-primary">{{ count(\App\Album::all())}}</span></a>
+        </li>
+        <li>
+            <a href="{{route('mes.index')}}" class="">Cielo del Mes</a>
+        </li>
+    </ul>
+
+</nav>

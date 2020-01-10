@@ -31,7 +31,8 @@
 			</div>
 
 	<div class="form-group">
-		{!! Form::submit('Editar',['class'=>'btn btn-primary']) !!}
+		{!! Form::submit('Guardar Cambios',['class'=>'btn btn-primary']) !!}
+		{!! link_to(URL::previous(), 'Cancelar', ['class' => 'btn btn-danger']) !!}
 	</div>
 
 	{!! Form::close() !!}
