@@ -10484,13 +10484,13 @@ nav.admin  ul li.nav-item a.nav-link:hover{
 .dropdown.no-arrow .dropdown-toggle::after {
   display: none;
 }*/
-.dropdown-toggle::after {
+.side-admin .dropdown-toggle::after {
     display: block;
     position: absolute;
     top: 50%;
     right: 160px;
     transform: translateY(-50%);
-}
+} 
 
 .break-word {
   display: block;

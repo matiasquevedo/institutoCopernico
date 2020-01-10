@@ -1,4 +1,4 @@
-<nav id="sidebar">
+<nav id="sidebar" class="side-admin">
     <div class="sidebar-header text-center">
         <a class="navbar-brand" href="/">
           <img src="/logo.jpg" class="rounded-circle" width="90"></a>
@@ -46,10 +46,10 @@
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                    <a href="{{route('events.calendar')}}" class="">Calendario<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
+                    <a href="{{route('events.calendar')}}" class="">Calendario</a>
                 </li>
                 <li>
-                    <a href="{{route('event.index')}}" class="">Lista<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
+                    <a href="{{route('event.index')}}" class="">Lista</a>
                 </li>
             </ul>
         </li>
