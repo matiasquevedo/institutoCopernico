@@ -10,6 +10,7 @@
 		  <thead>
 		    <tr>
 		      <th>Nombre</th>
+		      <th>Email</th>
 		      <th>Tipo</th>
 		      <th>Acción</th>
 		    </tr>
@@ -17,14 +18,16 @@
 		  <tbody>
 		    @foreach($users as $user)
 		    <tr>
-		        <td>{{$user->name}} {{$user->lastname}}</td>
+		        <td><a href="{{route('user.show',$user->email)}}">{{$user->name}} {{$user->lastname}}</a></td>
+		        <td>{{$user->email}}</td>
 		        <td>
 		        	@if($user->type == 'admin')
 		        		<span class="badge badge-success">Administrador</span>
+		        	@else
+		        		<span class="badge badge-info">Sin Asignar</span>
 		        	@endif
 		        </td>
 		      <td>
-		        <a href="{{ route('user.edit', $user->email) }}" class="btn btn-warning"><span class="fas fa-wrench"></span></a>
 		        <a href="{{ route('user.destroy', $user->email) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
 		      </td>
 		    </tr>

@@ -95,6 +95,8 @@ class MonthController extends Controller
     public function edit($monthSlug)
     {
         //
+        $month = Month::findBySlug($monthSlug);
+        return view('admin.cielo.edit')->with('month',$month);
 
     }
 
@@ -111,7 +113,7 @@ class MonthController extends Controller
         // dd($month, $request, $monthSlug);
         $month->fill($request->all());
         $month->save();
-        flash('Se a guardado el mes ' . $month->titulo)->success();
+        flash('Se han guardado los cambios del mes ' . $month->titulo)->success();
         return redirect()->back();
     }
 

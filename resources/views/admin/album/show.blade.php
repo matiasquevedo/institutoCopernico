@@ -7,7 +7,8 @@
 	<h3>Album {{$album->titulo}}</h3>
 	<div class="row">
 		<div class="col-6">
-			<img class="" height="70%" src="{{url($album->portada)}}" alt="Card image cap">
+			<img class="" width="150" src="{{url($album->portada)}}" alt="Card image cap">
+
 		</div>
 		<div class="col-6">
 			<div class="px-3 py-3 border rounded bg-light">

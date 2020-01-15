@@ -46,13 +46,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function showPerfil()
     {
         //
         $user = User::find(\Auth::user()->id);
         // dd($user);
         return view('auth.perfil')->with('user',$user);
     }
+
+    public function show($email)
+    {
+        //
+        $user = $this->findByEmial($email);
+        // dd($user);
+        return view('admin.user.show')->with('user',$user);
+    }
+
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -72,9 +83,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $email)
     {
-        //
+        //        dd($request, $emial);
+
+        $user = $this->findByEmial($email);
+        $user->fill($request->all());
+        // dd($request, $user);
+        $user->type = $request->type;
+        $user->save();
+        flash('Se ha modificado el usuario '.$user->name.' '.$user->lastname)->success();
+        return redirect()->back();
     }
 
     /**
@@ -93,5 +112,10 @@ class UserController extends Controller
         flash('Se ha eliminado el usuario: '.$user->email.' del comercio: '.$commerce)->error();
         return redirect()->route('user.index');
 
+    }
+
+    private function findByEmial($email){
+        $user = User::where('email',$email)->first();
+        return $user;
     }
 }

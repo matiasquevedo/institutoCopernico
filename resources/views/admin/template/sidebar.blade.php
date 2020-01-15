@@ -6,7 +6,7 @@
 
     <ul class="list-unstyled components">
     	<li>
-    	    <a href="/panel">Panel</a>
+    	    <a href="{{route('admin.panel')}}">Panel</a>
     	</li>
         {{-- <li class="active">
             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>

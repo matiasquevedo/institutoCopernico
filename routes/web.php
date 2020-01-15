@@ -17,12 +17,21 @@ Route::get('/',[
 	'as'=>'pagina.principal'
 ]);
 
+Route::get('/storage', function(){
+    $exitCode = Artisan::call('storage:link', [] );
+    echo $exitCode; // 0 exit code for no errors.
+});
+
 Route::get('perfil',[
-	'uses'=>'UserController@show',
+	'uses'=>'UserController@showPerfil',
 	'as'=>'user.perfil'
 ]);
 
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
+
+	Route::get('/',function(){
+		return view('admin.index');
+	})->name('admin.panel');
 
 	Route::resource('user','UserController');
 	Route::get('user/{email}/delete',[
