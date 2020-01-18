@@ -12,6 +12,7 @@
         "barryvdh/laravel-dompdf": "^0.8.5",
         "cviebrock/eloquent-sluggable": "^6.0",
         "fideloper/proxy": "^4.0",
+        "harimayco/laravel-menu": "^1.4",
         "intervention/image": "^2.5",
         "laracasts/flash": "^3.0",
         "laravel/framework": "^6.2",

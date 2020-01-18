@@ -9,3 +9,5 @@ select * from events;
 select * from albums;
 select * from images;
 select * from months;
+select * from menus;
+select * from menu_items;

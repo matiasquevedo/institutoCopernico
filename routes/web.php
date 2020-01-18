@@ -115,7 +115,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 		'as'=>'mes.preview'
 	]);
 
-	
+	Route::resource('menu','MenuController');	
 
 
 });
