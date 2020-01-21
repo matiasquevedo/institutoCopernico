@@ -17,9 +17,32 @@
               @if(count(\App\Album::where('state','1')->get())>0)
                 <li class="nav-item"><a class="nav-link" href="">Galeria</a></li>
               @endif
-              @foreach($pages as $page)
+              {{-- @foreach($pages as $page)
                 <li class="nav-item"><a class="nav-link" href="{{route('public.page',$page->slug)}}">{{ ucwords($page->title) }}</a></li>
-              @endforeach
+              @endforeach --}}
+
+              @if($public_menu)
+                  @foreach($public_menu as $menu)
+                    @if( $menu['child'] )
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $menu['label'] }}</span></a>          
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          @foreach( $menu['child'] as $child)
+                            <a class="dropdown-item" href="{{ $menu['link'] }}" title="">{{ $menu['label'] }}</a>
+                            <a class="dropdown-item" href="{{ $child['link'] }}">{{ $child['label'] }}</a>
+                          @endforeach
+                        </div>
+                      </li> 
+                    @else
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ $menu['link'] }}" title="">{{ $menu['label'] }}</a>
+                      </li>
+                    @endif
+
+                  @endforeach
+              @endif
+
+
               {{-- <li class="nav-item"><a class="nav-link" href="">Contacto</a></li> --}}
               
               @guest

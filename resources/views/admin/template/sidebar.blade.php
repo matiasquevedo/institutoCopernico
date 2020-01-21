@@ -37,13 +37,20 @@
             </ul>
         </li>  --}}
         <li>
-            <a href=" {{route('user.index')}} " class="">Usuarios<span class="float-right badge badge-primary">{{ count(\App\User::all())}}</span></a>
+            <a href=" {{route('user.index')}} " class="">Usuarios<span class="float-right badge badge-primary">{{ \App\User::count() }}</span></a>
         </li>
         <li>
-            <a href="{{route('page.index')}}" class="">Secciones<span class="float-right badge badge-primary">{{ count(\App\Page::all())}}</span></a>
+            <a href="{{route('page.index')}}" class="">Secciones<span class="float-right badge badge-primary">{{ \App\Page::count() }}</span></a>
         </li>
+
         <li>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos<span class="float-right badge badge-primary">{{ count(\App\Event::all())}}</span></a>
+            <a href="{{route('menu.index')}}" class="">Menus<span class="float-right badge badge-primary">{{ count(DB::table('menus')->get())}}</span></a>
+            
+        </li>
+
+        
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Eventos<span class="float-right badge badge-primary">{{ \App\Event::count() }}</span></a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
                     <a href="{{route('events.calendar')}}" class="">Calendario</a>
@@ -54,7 +61,7 @@
             </ul>
         </li>
         <li>
-            <a href="{{route('album.index')}}" class="">Albumes<span class="float-right badge badge-primary">{{ count(\App\Album::all())}}</span></a>
+            <a href="{{route('album.index')}}" class="">Albumes<span class="float-right badge badge-primary">{{ \App\Album::count() }}</span></a>
         </li>
         <li>
             <a href="{{route('mes.index')}}" class="">Cielo del Mes</a>
