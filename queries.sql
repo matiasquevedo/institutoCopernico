@@ -11,3 +11,5 @@ select * from images;
 select * from months;
 select * from menus;
 select * from menu_items;
+select * from categories;
+select * from entries;
