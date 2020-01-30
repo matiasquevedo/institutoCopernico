@@ -115,7 +115,26 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 		'as'=>'mes.preview'
 	]);
 
-	Route::resource('menu','MenuController');	
+	Route::resource('menu','MenuController');
+	Route::resource('category','CategoryController');
+	Route::get('category/{slug}/delete',[
+		'uses'=>'CategoryController@destroy',
+		'as'=>'categories.destroy'
+	]);
+
+	Route::resource('entry','EntryController');
+	Route::get('entry/{slug}/post',[
+		'uses'=>'EntryController@post',
+		'as'=>'entry.post'
+	]);
+	Route::get('entry/{slug}/unpost',[
+		'uses'=>'EntryController@unpost',
+		'as'=>'entry.unpost'
+	]);
+	Route::get('entry/{slug}/delete',[
+		'uses'=>'EntryController@destroy',
+		'as'=>'entries.destroy'
+	]);	
 
 
 });
