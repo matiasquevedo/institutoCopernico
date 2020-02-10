@@ -10422,6 +10422,32 @@ nav.admin  ul li.nav-item a.nav-link:hover{
   color: rgba(255,255,255,1) !important;
 }
 
+.event{
+  color: rgba(255,255,255,1) !important;
+  background-color: white !important;
+}
+.event a{
+  color: black !important;
+  text-decoration: none;
+}
+
+.event:hover{  
+  background-color: #222222 !important;
+}
+
+.event:hover a{
+  color: white !important;
+}
+
+.event:hover a h5{
+  color: #3498db !important;
+}
+
+.bg-home{
+  background: #343a40 url('/images/bg-home.png') 50% 0 no-repeat;
+  height: 500px; 
+}
+
 /*.dropdown .dropdown-menu {
   font-size: 0.85rem;
 }
@@ -10455,4 +10481,20 @@ nav.admin  ul li.nav-item a.nav-link:hover{
    -moz-hyphens: auto;
     -ms-hyphens: auto;
         hyphens: auto;
+}
+
+.nav-item a{
+  color: rgba(255,255,255,.6) !important;
+}
+
+.nav-item a:hover{
+  color: rgba(255,255,255,1) !important;
+}
+
+.dropdown-menu a{
+  color: black !important;
+}
+
+.dropdown-menu a:hover{
+  background-color: #3498db !important;
 }

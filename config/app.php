@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Http\ViewComposers\ComposerServiceProvider::class,
         Harimayco\Menu\MenuServiceProvider::class,
+        Laravelista\Comments\ServiceProvider::class,
 
     ],
 

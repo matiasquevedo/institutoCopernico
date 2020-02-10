@@ -123,7 +123,7 @@ class AlbumController extends Controller
         $page = Album::findBySlug($albumSlug);
         $page->state = '1';
         $page->save();
-        flash('Se la sección '.$page->title.' esta visible')->success();
+        flash('El album '.$page->titulo.' está visible')->success();
         return redirect()->back();
     }
 
@@ -133,7 +133,7 @@ class AlbumController extends Controller
         $page = Album::findBySlug($albumSlug);
         $page->state = '0';
         $page->save();
-        flash('Se la sección '.$page->title.' esta oculta')->error();
+        flash('El album '.$page->titulo.' está oculto')->error();
         return redirect()->back();
 
     }
