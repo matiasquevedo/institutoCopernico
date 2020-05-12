@@ -22,6 +22,7 @@
 	    				    	<td> <a href="{{route('category.show',$category->slug)}}">{{$category->name}}</a> </td>
 	    				    	<td>{{ count($category->entries) }}</td>
 	    				    	<td>
+	    				    		<p>Sin acciones</p>
 	    				    	</td>
 	    				    </tr>
 					    @else

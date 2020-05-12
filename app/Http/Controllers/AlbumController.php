@@ -232,8 +232,12 @@ class AlbumController extends Controller
         $album = Album::findBySlug($albumSlug);
         File::delete($album->images);
         foreach ($album->images as $image) {
+            Storage::disk('public')->delete($image->image);
+            Storage::disk('public')->delete($image->thumb);
             $image->delete();
         }
+        Storage::disk('public')->delete($album->portada);        
+        $album->delete();
         flash('Se ha eliminado el album: '.$album->titulo)->error();
         return redirect()->back();
     }

@@ -13,7 +13,7 @@
 			    <tr>
 			      <th>Titulo</th>
 			      <th>Categoria</th>
-			      <th>Creador</th>
+			      <th class="d-none d-md-block d-lg-block">Creador</th>
 			      <th>Estado</th>
 			      <th>Acción</th>
 			    </tr>
@@ -23,7 +23,7 @@
 			    <tr>
 			    	<td><a href="{{route('entry.show',$entry->slug)}}">{{$entry->title}}</a></td>
 			    	<td><a href="{{route('category.show',$entry->category->slug)}}">{{$entry->category->name}}</a></td>
-			    	<td>{{$entry->user->name}} {{$entry->user->lastname}}</td>
+			    	<td class="d-none d-md-block d-lg-block">{{$entry->user->name}} {{$entry->user->lastname}}</td>
 			    	<td>
 			        	<h5>
 			        		@if($entry->state == '1')
@@ -35,9 +35,9 @@
 		        	</td>
 			    	<td>
     			      	@if($entry->state == '1')
-    						<a href="{{ route('entry.unpost', $entry->slug) }}" class="btn btn-primary"><span class="fas fa-eye-slash"></span></a>
+    						<a data-toggle="popover-hover" title="La entrada está visible." data-content="Haga clikc para ocultar" href="{{ route('entry.unpost', $entry->slug) }}" class="btn btn-primary"><span class="fas fa-eye-slash"></span></a>
     		        	@elseif($entry->state == '0')
-    		        		<a href="{{ route('entry.post', $entry->slug) }}" class="btn btn-primary"><span class="fas fa-eye"></span></a>
+    		        		<a data-toggle="popover-hover" title="La entrada está oculta." data-content="Haga clikc para ocultar" href="{{ route('entry.post', $entry->slug) }}" class="btn btn-primary"><span class="fas fa-eye"></span></a>
     		        	@endif
     		        	<a href="{{ route('entry.edit', $entry->slug) }}" class="btn btn-warning"><span class="fas fa-wrench"></span></a>
     		        	<a href="{{ route('entries.destroy', $entry->slug) }}" data-method="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
@@ -56,4 +56,14 @@
 		@endif
 	</div>
 </div>
+@endsection
+
+@section('js')
+<script>
+	$(function () {
+	  $('[data-toggle="popover-hover"]').popover({
+	    trigger: 'hover',
+	  })
+	})
+</script>
 @endsection

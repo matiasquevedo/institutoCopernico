@@ -1,10 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #3498db !important;border:none !important;">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top nav-home" >
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
     <div class="navbar-header">
         <a class="navbar-brand" href="/">
-          <img src="/logo.jpg" class="rounded-circle" width="35"></a>
+          @if(Route::current()->getName() != 'pagina.principal')
+            <img src="/logo.jpg" class="rounded-circle" width="35">
+          @endif
+        </a>
     </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav mr-auto">           

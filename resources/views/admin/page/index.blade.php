@@ -11,7 +11,7 @@
 		  <thead>
 		    <tr>
 		      <th>Titulo</th>
-		      <th>Ubicación</th>
+		      <th class="d-none d-md-block d-lg-block">Ubicación</th>
 		      <th>Estado</th>
 		      <th>Acción</th>
 		    </tr>
@@ -20,7 +20,7 @@
 		    @foreach($pages as $page)
 		    <tr>
 		        <td><a href="{{route('page.show',$page->slug)}}">{{ ucwords($page->title) }}</a></td>
-		        <td>
+		        <td class="d-none d-md-block d-lg-block">
 		        	@if($page->nav == '1')
 						Barra Superior
 			        	@if($page->home == '1')
@@ -47,9 +47,9 @@
 		        </td>
 		      <td>
 		      	@if($page->state == '1')
-					<a href="{{ route('page.unpost', $page->slug) }}" class="btn btn-primary"><span class="fas fa-eye-slash"></span></a>
+					<a data-toggle="popover-hover" title="La seccion está Visible" data-content="Haga clikc para ocultar" href="{{ route('page.unpost', $page->slug) }}" class="btn btn-primary"><span class="fas fa-eye-slash"></span></a>
 	        	@elseif($page->state == '0')
-	        		<a href="{{ route('page.post', $page->slug) }}" class="btn btn-primary"><span class="fas fa-eye"></span></a>
+	        		<a data-toggle="popover-hover" title="La seccion está Oculta" data-content="Haga clikc para hacer visible" href="{{ route('page.post', $page->slug) }}" class="btn btn-primary"><span class="fas fa-eye"></span></a>
 	        	@endif
 		      	
 		        <a href="{{ route('page.edit', $page->slug) }}" class="btn btn-warning"><span class="fas fa-wrench"></span></a>
@@ -70,4 +70,14 @@
 	</div>
 	@endif
 </div>
+@endsection
+
+@section('js')
+<script>
+	$(function () {
+	  $('[data-toggle="popover-hover"]').popover({
+	    trigger: 'hover',
+	  })
+	})
+</script>
 @endsection

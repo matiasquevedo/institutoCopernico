@@ -6,3 +6,39 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.prueba{
+	height: 500px;
+	background-color: red;
+}
+
+.nav-home{
+	background-color: #3498db !important;
+	height: 97px;
+	color:white !important;
+}
+
+.bg-home{
+    height: 740px;
+    margin-top: -4%;
+    background-image: url("/images/back-home.svg");
+    background-size: cover;
+    padding-top: 5%;
+	// background-position: center top;
+	// background-size: 100% 100%;
+	// padding-bottom: 48%;
+	// background-repeat: no-repeat;
+}
+
+.nav-home .nav-item{
+	font-size: 1.1rem;
+	color: white !important;
+}
+
+.nav-home .nav-item a{
+	color: white !important;
+}
+
+.nav-home .nav-item a:hover{
+	color: #ff6081 !important;
+}

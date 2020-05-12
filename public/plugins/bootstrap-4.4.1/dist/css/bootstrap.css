@@ -10443,10 +10443,7 @@ nav.admin  ul li.nav-item a.nav-link:hover{
   color: #3498db !important;
 }
 
-.bg-home{
-  background: #343a40 url('/images/bg-home.png') 50% 0 no-repeat;
-  height: 500px; 
-}
+
 
 /*.dropdown .dropdown-menu {
   font-size: 0.85rem;
@@ -10483,13 +10480,6 @@ nav.admin  ul li.nav-item a.nav-link:hover{
         hyphens: auto;
 }
 
-.nav-item a{
-  color: rgba(255,255,255,.6) !important;
-}
-
-.nav-item a:hover{
-  color: rgba(255,255,255,1) !important;
-}
 
 .dropdown-menu a{
   color: black !important;
@@ -10497,4 +10487,26 @@ nav.admin  ul li.nav-item a.nav-link:hover{
 
 .dropdown-menu a:hover{
   background-color: #3498db !important;
+}
+
+
+@media (max-width: 767px) {
+  /*.page-description{
+    background-color: green !important;
+  }*/
+
+  .page-description p img{
+    position: relative !important;
+    clear: right;
+    width: 98% !important;
+    height: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+  .page-description iframe{
+    width: 90% !important;
+    height: auto;
+  }
+  
 }

@@ -3,6 +3,7 @@
 @section('title','Inicio')
 
 @section('content')
+
 {{-- https://bootstrapmade.com/demo/Vesperr/ --}}
 {{-- <div class="bg-white px-3 py-3 border rounded mx-3">
 	<div class="container-fluid">
@@ -24,8 +25,61 @@
 		</div>
 	</div>
 @endif --}}
-<div class="bg-home bg-opacity">
-	<div class="position-relative">
+<div class="bg-home">
+	<div class="container">
+		<div class="mt-2" style="color: white !important;">
+			<div>
+				<img src="/logo.jpg" class="rounded-circle" width="150">
+			</div>
+			@if(count($pages)>0)
+			<div class="container-fluid sections my-3">
+				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+				  <div class="carousel-inner">
+				  	@foreach($pages as $x => $page)
+				  		@if($x==1)
+				  		<div class="carousel-item active">
+				  			<div style="color: white !important;">
+				  		  		<h4>{{ ucwords($page->title) }}</h4>
+				  		  		<p>
+				  		  			{{ mb_strimwidth(strip_tags($page->descripcion,'<br>,&nbsp;'),0, 180, "...") }}
+				  		  		</p>
+				  		  		<a href="{{route('public.page',$page->slug)}}" class="btn btn-outline-light">Ver más...</a>
+
+				  			</div>
+				  		</div>
+				  		@else
+				  		<div class="carousel-item">
+				  			<div style="color: white !important;">
+				  		  		<h4>{{ ucwords($page->title) }}</h4>
+				  		  		<p>
+				  		  			{{ mb_strimwidth(strip_tags($page->descripcion,'<br>,&nbsp;'),0, 160, "...") }}
+				  		  		</p>
+				  		  		<a href="{{route('public.page',$page->slug)}}" class="btn btn-outline-light">Ver más...</a>
+				  			</div>
+				  		</div>
+				  		@endif
+				  	@endforeach	
+				  	<div class="carousel-item">
+				  		<div style="color: white !important;">
+				  	  		<h4>{{ ucwords("Cielo del Mes") }}</h4>
+				  		</div>
+				  	</div>					    
+				  </div>{{-- 
+				  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a> --}}
+				</div>
+						
+			</div>
+			@endif
+		</div>
+	</div>
+	{{-- <div class="position-relative">
 		<div class="text-center py-5" style="font-family: 'Roboto Condensed', sans-serif; color:white;z-index: 1000;">
 			<img src="/images/coper.png" class="rounded-circle" width="255">
 			<h1 class="text-center mt-1" style="font-size: 64px !important;
@@ -37,10 +91,10 @@ font-weight: 700 !important;">
 				 
 			</h1>
 		</div>
-	</div>	
+	</div> --}}	
 </div>
 @if(count($events)>0)
-<div class="container my-5">
+<div class="container">
 	<div class="events">
 		<h4>Próximos eventos</h4>
 		<div class="row ">
@@ -137,15 +191,15 @@ font-weight: 700 !important;">
 @endif
 
 @if(count($pages)>0)
-<div class="container sections my-5">
+<div class="container-fluid sections my-5">
 		@foreach($pages as $page)
-			<div class="bg-white py-2 mt-5 border rounded">
-				<div class="container ">
+			<div class="py-2 mt-5 ">
+				<div class="">
 					
 					<div class="my-5 ">
 						<h3>{{ ucwords($page->title) }}</h3>
-						<div class="text-break">
-							{!! $page->descripcion !!}
+						<div class="text-left page-description" style="word-wrap: break-word;" >
+							 {!! $page->descripcion !!}
 						</div>
 					</div>
 					

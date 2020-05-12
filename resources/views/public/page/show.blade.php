@@ -3,10 +3,10 @@
 @section('title',ucwords($page->title))
 
 @section('content')
-<div class="container my-5 ">
-	<div class=" bg-white px-5 py-3 border rounded">
+<div class="container-fluid sections my-5 ">
+	<div class=" bg-white p-3">
 		<h3> {{ ucwords($page->title) }} </h3>
-		<div class="text-justify" style="word-wrap: break-word;">
+		<div class="text-left page-description" style="word-wrap: break-word;">
 			{!! $page->descripcion !!}
 		</div>
 	</div>
