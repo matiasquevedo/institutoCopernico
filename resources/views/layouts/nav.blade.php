@@ -19,6 +19,7 @@
               @endif
               {{-- @foreach($pages as $page)
                 <li class="nav-item"><a class="nav-link" href="{{route('public.page',$page->slug)}}">{{ ucwords($page->title) }}</a></li>
+<<<<<<< HEAD
               @endforeach --}}
 
               @if($public_menu)
@@ -44,6 +45,10 @@
 
 
               {{-- <li class="nav-item"><a class="nav-link" href="">Contacto</a></li> --}}
+=======
+              @endforeach
+              <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
+>>>>>>> parent of d5a9849... homeController
               
               @guest
                   <li class="nav-item"><a class="nav-link" href="{{route('register')}}">

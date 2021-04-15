@@ -29,7 +29,7 @@ class HomeController extends Controller
         if(\Auth::user()->type == 'admin'){
             return view('admin.index');
         }elseif (\Auth::user()->type == 'commerce') {
-            return redirect()->route('pagina.principal');
+
         }        
     }
 

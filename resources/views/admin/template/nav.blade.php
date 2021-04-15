@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom admin sticky-top" style="background-color: #282828 !important; height: 70px; max-width: 100% !important;min-width: 100% !important; box-shadow: 0 15px 15px -15px #333; border-color: #1f1f1f !important; color:white !important;border-left: 1px solid white;">
    
    <button type="button" id="sidebarCollapse" class="btn btn-outline-light">
@@ -5,6 +6,13 @@
    </button>
    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <i class="fas fa-align-justify"></i>
+=======
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom admin" style="background-color:  #1f1f1f !important; height: 70px; max-width: 100% !important;min-width: 100% !important; box-shadow: 0 15px 15px -15px #333; border-color: #1f1f1f !important; color:white !important;">
+   {{-- <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button> --}}
+
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+>>>>>>> parent of d5a9849... homeController
    </button>
 
    <div class="collapse navbar-collapse" id="navbarSupportedContent">

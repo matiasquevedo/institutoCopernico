@@ -40,6 +40,10 @@ class LoginController extends Controller
 
     public function logout(Request $request) {
       \Auth::logout();
+<<<<<<< HEAD
       return redirect()->route('pagina.principal');
+=======
+      return redirect()->route('');
+>>>>>>> parent of d5a9849... homeController
     }
 }
