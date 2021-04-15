@@ -1,10 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important;">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top nav-home" >
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
     <div class="navbar-header">
         <a class="navbar-brand" href="/">
-          <img src="/logo.jpg" class="rounded-circle" width="35"></a>
+          @if(Route::current()->getName() != 'pagina.principal')
+            <img src="/logo.jpg" class="rounded-circle" width="35">
+          @endif
+        </a>
     </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav mr-auto">           
@@ -29,14 +32,14 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $menu['label'] }}</span></a>          
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                           @foreach( $menu['child'] as $child)
-                            <a class="dropdown-item" href="{{ $menu['link'] }}" title="">{{ $menu['label'] }}</a>
+                            <a class="dropdown-item" href="/seccion/{{ $menu['link'] }}" title="">{{ $menu['label'] }}</a>
                             <a class="dropdown-item" href="{{ $child['link'] }}">{{ $child['label'] }}</a>
                           @endforeach
                         </div>
                       </li> 
                     @else
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ $menu['link'] }}" title="">{{ $menu['label'] }}</a>
+                        <a class="nav-link" href="/seccion/{{ $menu['link'] }}" title="">{{ $menu['label'] }}</a>
                       </li>
                     @endif
 

@@ -7,8 +7,8 @@
 	<h3>Panel Administrador</h3>
 </div>
 <div class="mt-4">
-	<div class="row ml-3">
-		<div class="col-3">
+	<div class="row text-center" style="width: 90% !important;">
+		<div class="col-12 col-sm-12 col-md-3 col-lg-3">
 			<div class="card border-left-primary shadow h-100 py-2">
 			  <div class="card-body">
 			    <div class="row no-gutters align-items-center">
@@ -23,7 +23,7 @@
 			  </div>
 			</div>
 		</div>
-		<div class="col-3">
+		<div class="col-12 col-sm-12 col-md-3 col-lg-3">
 			<div class="card border-left-warning shadow h-100 py-2">
 			  <div class="card-body">
 			    <div class="row no-gutters align-items-center">
@@ -38,7 +38,7 @@
 			  </div>
 			</div>
 		</div>
-		<div class="col-3">
+		<div class="col-12 col-sm-12 col-md-3 col-lg-3">
 			<div class="card border-left-info shadow h-100 py-2">
 			  <div class="card-body">
 			    <div class="row no-gutters align-items-center">

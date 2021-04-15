@@ -10422,6 +10422,29 @@ nav.admin  ul li.nav-item a.nav-link:hover{
   color: rgba(255,255,255,1) !important;
 }
 
+.event{
+  color: rgba(255,255,255,1) !important;
+  background-color: white !important;
+}
+.event a{
+  color: black !important;
+  text-decoration: none;
+}
+
+.event:hover{  
+  background-color: #222222 !important;
+}
+
+.event:hover a{
+  color: white !important;
+}
+
+.event:hover a h5{
+  color: #3498db !important;
+}
+
+
+
 /*.dropdown .dropdown-menu {
   font-size: 0.85rem;
 }
@@ -10455,4 +10478,35 @@ nav.admin  ul li.nav-item a.nav-link:hover{
    -moz-hyphens: auto;
     -ms-hyphens: auto;
         hyphens: auto;
+}
+
+
+.dropdown-menu a{
+  color: black !important;
+}
+
+.dropdown-menu a:hover{
+  background-color: #3498db !important;
+}
+
+
+@media (max-width: 767px) {
+  /*.page-description{
+    background-color: green !important;
+  }*/
+
+  .page-description p img{
+    position: relative !important;
+    clear: right;
+    width: 98% !important;
+    height: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+  .page-description iframe{
+    width: 90% !important;
+    height: auto;
+  }
+  
 }

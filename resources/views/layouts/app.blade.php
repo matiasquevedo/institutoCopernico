@@ -14,7 +14,8 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -25,22 +26,24 @@
     <link rel="stylesheet" href="{{ asset('plugins/leaflet-geocoder/dist/Control.Geocoder.css')}}">
     <link rel="stylesheet" href="{{ asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.css')}}">
     <link rel="stylesheet" href=" {{asset('plugins/rangeslider.js-2.3.0/rangeslider.css')}} ">
+    <link rel="stylesheet" href="{{ asset('plugins/fullcalendar/fullcalendar.css')}}">
     
 
     
 
     
 </head>
-<body style="background-color: #f4f5f6 !important;font-family: 'Open Sans', sans-serif;">
+<body style="background-color: white !important;font-family: 'Open Sans', sans-serif;">
     <div>
         @include("layouts.nav")
-        <main class="my-5">            
+        <main class="">            
             <div id='app'>
                 @yield('content')
             </div>
         </main>
-    </div>
+    </div> 
 
+<<<<<<< HEAD
     {{-- <script src=" {{asset('plugins/jquery/jquery-3.4.1.js')}} " ></script> --}}
     <script src=" {{asset('plugins/popper/popper.min.js')}} " ></script>
     <script src="{{asset('plugins/bootstrap-4.4.1/dist/js/bootstrap.js')}}"></script>
@@ -51,6 +54,17 @@
     <script src="{{asset('plugins/leaflet-fullscreen/dist/leaflet.fullscreen.js')}}"></script>
     <script src='https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js'></script>
     <script src="{{asset('plugins/rangeslider.js-2.3.0/rangeslider.js')}}"></script>
+=======
+    <script src=" {{asset('plugins/jquery/jquery-3.4.1.js')}} " ></script>
+    <script src=" {{asset('plugins/jquery/jquery-3.4.1.js')}} " ></script>
+    <script src=" {{asset('plugins/popper/popper.min.js')}} " ></script>
+    <script src="{{asset('plugins/bootstrap-4.4.1/dist/js/bootstrap.js')}}"></script>
+    <script src=" {{asset('plugins/fontawesome-5.11.2/js/all.js')}} "></script>
+    {{-- fullcalendar --}}
+    <script src="{{asset('plugins/fullcalendar/lib/moment.min.js')}}"></script>
+    <script src="{{asset('plugins/fullcalendar/fullcalendar.min.js')}}"></script>
+    <script src="{{asset('plugins/fullcalendar/locale/es.js')}}"></script>
+>>>>>>> ea65a7233f54606167e315223897505bd1dbc7d7
     @yield('js')
 </body>
 </html>

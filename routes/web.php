@@ -17,10 +17,6 @@ Route::get('/',[
 	'as'=>'pagina.principal'
 ]);
 
-Route::get('/storage', function(){
-    $exitCode = Artisan::call('storage:link', [] );
-    echo $exitCode; // 0 exit code for no errors.
-});
 
 Route::get('perfil',[
 	'uses'=>'UserController@showPerfil',
@@ -142,4 +138,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 Auth::routes();
 
 Route::get('/panel', 'HomeController@index')->name('home');
-Route::get('/{slugPage}', 'HomeController@publicPage')->name('public.page');
+Route::get('/seccion/{slugPage}', 'HomeController@publicPage')->name('public.page');
+Route::get('/eventos', 'HomeController@events')->name('public.eventos');
+Route::get('/eventos/{slugEvent}', 'HomeController@event')->name('public.evento');
+Route::get('/blog/entradas/{entrySlug}', 'HomeController@entry')->name('public.entrada');
